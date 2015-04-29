@@ -12,4 +12,4 @@ Emil loves this idea!
 >>>>>>> Stashed changes
 
 Erick's added changes
-Mongo Lab URL mongodb://generic:Default13@ds031812.mongolab.com:31812/gettingstuffdone
+Mongo Lab URL mongodb://generic:Default13@ds031802.mongolab.com:31802/gittingstuffdone
