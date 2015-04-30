@@ -53,7 +53,7 @@ module.exports = function(app, passport) {
         });
     });
 
-    app.route('/api/list/addItem')
+    app.route('/api/list')
         .post(list.saveItem)
         .get(list.getList);
 
