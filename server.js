@@ -27,6 +27,9 @@ app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
 app.set('views', __dirname + '/client/views');
 app.set('view engine', 'ejs'); // set up ejs for templating
+app.use('/scripts', express.static('client/scripts')); // get information from html forms
+app.use('/styles', express.static('client/styles')); // get information from html forms
+app.use('/vendor', express.static('client/vendor')); // get information from html forms
 
 // required for passport
 app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
@@ -40,3 +43,4 @@ require('./app/routes.js')(app, passport); // load our routes and pass in our ap
 // launch ======================================================================
 app.listen(port);
 console.log('The magic happens on port ' + port);
+

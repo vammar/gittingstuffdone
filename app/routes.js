@@ -2,6 +2,8 @@
 
 module.exports = function(app, passport) {
 
+    var list = require('../app/api/list.js');
+
     // route for home page
     app.get('/', function(req, res) {
         res.render('index.ejs'); // load the index.ejs file
@@ -51,6 +53,13 @@ module.exports = function(app, passport) {
         });
     });
 
+    app.route('/api/list/addItem')
+        .post(list.saveItem)
+        .get(list.getList);
+
+    app.get('/tests', function(req, res) {
+        res.render('tests.ejs', {});
+    });
 };
 
 // route middleware to make sure a user is logged in
