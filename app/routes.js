@@ -53,16 +53,13 @@ module.exports = function(app, passport) {
         });
     });
 
-<<<<<<< HEAD
     app.route('/api/list/addItem')
         .post(list.saveItem)
         .get(list.getList);
-=======
+
     app.get('/tests', function(req, res) {
         res.render('tests.ejs', {});
     });
-
->>>>>>> static
 };
 
 // route middleware to make sure a user is logged in
