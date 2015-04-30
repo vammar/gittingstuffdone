@@ -25,7 +25,7 @@ require('./config/passport')(passport); // pass passport for configuration
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
-app.set('views', __dirname + '/client/views');
+app.set('views', __dirname + '/app/views');
 app.set('view engine', 'ejs'); // set up ejs for templating
 app.use('/scripts', express.static('client/scripts')); // get information from html forms
 app.use('/styles', express.static('client/styles')); // get information from html forms
