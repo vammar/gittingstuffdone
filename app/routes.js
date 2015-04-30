@@ -51,6 +51,10 @@ module.exports = function(app, passport) {
         });
     });
 
+    app.get('/tests', function(req, res) {
+        res.render('tests.ejs', {});
+    });
+
 };
 
 // route middleware to make sure a user is logged in
