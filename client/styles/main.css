@@ -1,3 +1,7 @@
+body {
+  padding-top:80px; word-wrap:break-word;
+}
+
 .sample {
   background-color: red;
 }
