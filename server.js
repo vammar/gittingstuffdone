@@ -30,7 +30,7 @@ app.set('view engine', 'ejs'); // set up ejs for templating
 app.use('/scripts', express.static('client/scripts')); // get information from html forms
 app.use('/styles', express.static('client/styles')); // get information from html forms
 app.use('/vendor', express.static('client/vendor')); // get information from html forms
-app.use('/images', express.static('images')); // get information from html forms
+app.use('/images', express.static('client/images')); // get information from html forms
 
 // required for passport
 app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
