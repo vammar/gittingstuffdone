@@ -1,4 +1,4 @@
-var express          = require( 'express' )
+var express            = require( 'express' )
     , app              = express()
     , server           = require( 'http' ).createServer( app )
     , passport         = require( 'passport' )
@@ -7,12 +7,12 @@ var express          = require( 'express' )
     , cookieParser     = require( 'cookie-parser' )
     , session          = require( 'express-session' )
     , RedisStore       = require( 'connect-redis' )( session )
-    , GoogleStrategy   = require( 'passport-google-oauth2' ).Strategy;
+    , GoogleStrategy   = require('passport-google-oauth').OAuth2Strategy;
 
 // API Access link for creating client ID and secret:
 // https://code.google.com/apis/console/
-var GOOGLE_CLIENT_ID      = "548428983845-6msue3kmec3geqhbi1v609er5c92mui5.apps.googleusercontent.com"
-    , GOOGLE_CLIENT_SECRET  = "R2MD2fTqJvg-nQWGJ1DhkbcB";
+var GOOGLE_CLIENT_ID      = "548428983845-6msue3kmec3geqhbi1v609er5c92mui5.apps.googleusercontent.com",
+    GOOGLE_CLIENT_SECRET  = "R2MD2fTqJvg-nQWGJ1DhkbcB";
 
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to
@@ -72,7 +72,7 @@ app.use( session({
     secret: 'cookie_secret',
     name:   'kaas',
     store:  new RedisStore({
-        host: 'https://gittingstuffdone.herokuapp.com',
+        host: '127.0.0.1',
         port: 6379
     }),
     proxy:  true,
@@ -120,7 +120,7 @@ app.get('/logout', function(req, res){
     res.redirect('/');
 });
 
-server.listen( process.env.PORT || 3000 );
+server.listen( process.env.PORT || 8080 );
 
 
 // Simple route middleware to ensure user is authenticated.
