@@ -3,21 +3,57 @@
 <html>
 <head>
     <title>GittingStuffDone</title>
+	<!--link rel="stylesheet" type="text/css" href="../../styles/master.css"-->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <style>
         body        { padding-top:80px; word-wrap:break-word; }
     </style>
+	<script type="text/javascript">
+		function addItem(){
+		}
+	
+		function saveItem(){
+		}
+	</script>
+
+
 </head>
 <body>
 <div class="container">
 
-    <div class="page-header text-center">
+	<div id="headerDiv" style="display: block;" >
+		<img src="../../images/logo.png" alt="Logo"  style="width:50px;height:50px" >
         <h1><span class="fa fa-anchor"></span> Welcome <%= user.google.name %>! </h1>
-        <h3>Let's make a list</h3>
-        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
     </div>
+	
+    <div id="listDiv" style="display: block;">
+		<img src="../../images/add.png" alt="Add Item" style="" onClick="addItem()">
+		<table id="listTable" >
+			 <tr>
+				<th>Todo Item</th>
+			</tr>
+			 <tr>
+				<th>This is my item</th>
+			</tr>			
+		</table>
+    </div>
+	
+	 <div id="itemDiv" style="display: none;">
+		<table id="listTable" >
+			 <tr>
+				<td>Item Description</td>
+			</tr> 
+			 <tr>
+				<td>This is my item/td>
+			</tr>			
+		</table>	 
+		<img src="../../images/save.png" alt="Save" style="" onClick="saveItem()">
+    </div>
+	
+	 <div id="pageOptionsDiv" style="display: block;">
 
+    </div>
 </div>
 </body>
 </html>
