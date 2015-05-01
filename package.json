@@ -27,14 +27,25 @@
     "mongoose": "^4.0.2",
     "morgan": "^1.5.2",
     "passport": "^0.2.1",
-    "passport-google-oauth": "^0.2.0"
+    "passport-google-oauth": "^0.2.0",
+    "underscore": "latest",
+    "mustache": "latest",
+    "ramda": "latest"
   },
   "devDependencies": {
     "nodemon": "^1.3.7",
     "mocha": "latest",
-    "chai": "latest"
+    "chai": "latest",
+    "cucumber": "latest",
+    "webdriverio": "latest",
+    "supertest": "latest",
+    "sinon": "latest",
+    "webdriver-manager": "latest"
   },
   "scripts": {
-    "server-dev": "nodemon --watch server.js server.js"
+    "server": "nodemon --watch server.js server.js",
+    "features": "./node_modules/.bin/cucumber-js",
+    "selenium-update": "./node_modules/webdriver-manager/bin/webdriver-manager update",
+    "selenium": "./node_modules/webdriver-manager/bin/webdriver-manager start"
   }
 }
