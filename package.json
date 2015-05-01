@@ -40,12 +40,14 @@
     "webdriverio": "latest",
     "supertest": "latest",
     "sinon": "latest",
-    "webdriver-manager": "latest"
+    "webdriver-manager": "latest",
+    "jscs": "latest"
   },
   "scripts": {
-    "server": "nodemon --watch server.js server.js",
-    "features": "./node_modules/.bin/cucumber-js",
+    "service": "nodemon --watch server.js server.js",
+    "features": "cucumber-js",
     "selenium-update": "./node_modules/webdriver-manager/bin/webdriver-manager update",
-    "selenium": "./node_modules/webdriver-manager/bin/webdriver-manager start"
+    "selenium": "./node_modules/webdriver-manager/bin/webdriver-manager start",
+    "linter": "jscs server.js"
   }
 }
