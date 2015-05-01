@@ -27,10 +27,10 @@ app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
 app.set('views', __dirname + '/app/views');
 app.set('view engine', 'ejs'); // set up ejs for templating
-app.use('/scripts', express.static('client/scripts')); // get information from html forms
-app.use('/styles', express.static('client/styles')); // get information from html forms
-app.use('/vendor', express.static('client/vendor')); // get information from html forms
-app.use('/images', express.static('client/images')); // get information from html forms
+app.use('/scripts', express.static('client/scripts'));
+app.use('/styles', express.static('client/styles')); 
+app.use('/vendor', express.static('client/vendor'));
+app.use('/images', express.static('client/images'));
 
 // required for passport
 app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
