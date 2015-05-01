@@ -44,10 +44,10 @@
     "jscs": "latest"
   },
   "scripts": {
-    "service": "nodemon --watch server.js server.js",
+    "service": "nodemon --watch app/**/*.js app/server.js",
     "features": "cucumber-js",
     "selenium-update": "./node_modules/webdriver-manager/bin/webdriver-manager update",
     "selenium": "./node_modules/webdriver-manager/bin/webdriver-manager start",
-    "linter": "jscs server.js"
+    "linter": "jscs client/**/*.js"
   }
 }
