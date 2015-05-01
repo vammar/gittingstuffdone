@@ -44,7 +44,7 @@
     "jscs": "latest"
   },
   "scripts": {
-    "service": "nodemon --watch app/**/*.js app/server.js",
+    "service": "nodemon app/server.js --watch app/**/*.js",
     "features": "cucumber-js",
     "selenium-update": "./node_modules/webdriver-manager/bin/webdriver-manager update",
     "selenium": "./node_modules/webdriver-manager/bin/webdriver-manager start",
