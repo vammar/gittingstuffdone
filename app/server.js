@@ -15,6 +15,8 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
 var configDB = require('./config/database.js');
+var routes = require('./routes.js');
+var rootDir = process.cwd();
 
 // configuration ===============================================================
 mongoose.connect(configDB.url); // connect to our database
@@ -25,12 +27,9 @@ require('./config/passport')(passport); // pass passport for configuration
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
-app.set('views', __dirname + '/app/views');
+app.set('views', rootDir + '/app/views');
 app.set('view engine', 'ejs'); // set up ejs for templating
-app.use('/scripts', express.static('client/scripts')); // get information from html forms
-app.use('/styles', express.static('client/styles')); // get information from html forms
-app.use('/vendor', express.static('client/vendor')); // get information from html forms
-app.use('/images', express.static('client/images')); // get information from html forms
+app.use(express.static(rootDir + '/client'));
 
 // required for passport
 app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
@@ -39,7 +38,7 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 // routes ======================================================================
-require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+routes(app, passport); // load our routes and pass in our app and fully configured passport
 
 // launch ======================================================================
 app.listen(port);
